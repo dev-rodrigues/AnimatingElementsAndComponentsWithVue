@@ -10,7 +10,7 @@
       <button
         class="btn btn-primary mb-3"
         @click="mostrar = !mostrar">Alternar</button>
-        <transition>
+        <transition name="fade">
           <div
             class="alert alert-primary"
             v-if="mostrar">
@@ -33,28 +33,28 @@ export default {
 <style scope>
 
   /*ENTRADA*/
-  .v-enter {
+  .fade-enter {
     opacity:0;
   }
 
-  .v-enter-active {
+  .fade-enter-active {
     transition: opacity 1s;
   }
 
-  .v-enter-to {
+  .fade-enter-to {
     opacity:1;
   }
 
   /*SAIDA*/
-    .v-leave {
+    .fade-leave {
       opacity:1;
   }
 
-  .v-leave-active {
+  .fade-leave-active {
     transition: opacity 1s;
   }
 
-  .v-leave-to {
+  .fade-leave-to {
     opacity:0;
   }
 </style>
