@@ -6,6 +6,24 @@
         <p>Treinando transições/animações de elementos/componentes com VueJS.</p>
       </div>
     </div>
-    <div class="container"></div>
+    <div class="container">
+      <button
+        class="btn btn-primary mb-3"
+        @click="mostrar = !mostrar">Alternar</button>
+      <div
+      class="alert alert-primary"
+      v-if="mostrar">
+      </div>
+    </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      mostrar: true,
+    }
+  }
+}
+</script>
