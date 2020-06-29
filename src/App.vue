@@ -10,10 +10,12 @@
       <button
         class="btn btn-primary mb-3"
         @click="mostrar = !mostrar">Alternar</button>
-      <div
-      class="alert alert-primary"
-      v-if="mostrar">
-      </div>
+        <transition>
+          <div
+            class="alert alert-primary"
+            v-if="mostrar">
+          </div>  
+        </transition>      
     </div>
   </div>
 </template>
@@ -27,3 +29,32 @@ export default {
   }
 }
 </script>
+
+<style scope>
+
+  /*ENTRADA*/
+  .v-enter {
+    opacity:0;
+  }
+
+  .v-enter-active {
+    transition: opacity 1s;
+  }
+
+  .v-enter-to {
+    opacity:1;
+  }
+
+  /*SAIDA*/
+    .v-leave {
+      opacity:1;
+  }
+
+  .v-leave-active {
+    transition: opacity 1s;
+  }
+
+  .v-leave-to {
+    opacity:0;
+  }
+</style>
